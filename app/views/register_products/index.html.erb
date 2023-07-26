@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+<div class='o-header'>
+<h1>Cadastro de Produtos</h1>
+</div>
+<div class="o-aside">
+  <h1 style='text-align:center'>Cadastro</h1>
+  <p>teste</p>
+  <%= link_to"Novo Produto", new_register_product_path %>
+</div>
+<div class="o-main">
+  <main>
+    <div id="register_products">
+      <h1 style='text-align:center'>Produtos</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><strong>Nome<strong></th>
+            <th><strong>Descrição<strong></th>
+            <th><strong>Preço<strong></th>
+            <th style='border:none'></th>
+            <th style='border:none'></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @register_products.each do |register_product| %>
+          <tr>
+            <td><%= register_product.titulo %></td>
+            <td><%= register_product.descricao %></td>
+            <td><%= register_product.valor %></td>
+            <td style='border:none'><%= link_to "Ver Produto", register_product %></td>
+            <td style='border:none'><%= button_to "Excluir", register_product, method: :delete %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      
+    <div>
+  </main>
+</div>

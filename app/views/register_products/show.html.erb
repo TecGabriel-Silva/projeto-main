@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<div>
+<h1>Visualziar Produtos</h1>
+<%= render @register_product %>
+
+
+  <%= link_to "Editar", edit_register_product_path(@register_product) %> |
+  <%= link_to "Voltar", register_products_path %>
+
+  <%= button_to "Excluir", @register_product, method: :delete %>
+</div>
