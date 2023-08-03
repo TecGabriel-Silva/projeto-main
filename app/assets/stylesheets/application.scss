@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ @import "bootstrap";
+ 
+*{font-family:Arial, Helvetica, sans-serif;
+}
+body {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto 100vh auto;
+} 
+.o-header {
+  grid-area: header;
+  text-align: center;
+    background-color: #9090ff;
+  border-radius: 60px;
+}
+.o-aside {
+    grid-area: aside;
+    background-color: #c8c8c8;
+    height: 40%;
+    border-radius: 60px;
+  }     
+.o-main {
+  grid-area: main;
+  background-color: #c8c8c8;
+  height: 60%;
+  min-height: 50px;
+  border-radius: 60px;
+}
+table {
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+}
+  
+  
+table,
+td,th {
+  border-collapse: collapse;
+}
+  
+th,td {
+  padding: 10px;
+  border: solid 1px;
+  text-align: center;
+}

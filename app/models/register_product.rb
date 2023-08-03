@@ -1,2 +1,0 @@
-class RegisterProduct < ApplicationRecord
-end
