@@ -1,9 +1,11 @@
 <h1>Produtos</h1>
 <br>
 <ul>
-    <%@product.each do |products|%>
+    <%@article.each do |article|%>
         <li>
-         <%=products.name%>
+        <a href='<%=article_path(article)%>'>
+         <%=article.name%>
+         </a>
         </li>
     <%end%>
 </ul>
