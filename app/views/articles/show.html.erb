@@ -1,5 +1,10 @@
 <h1><%=@article.name%></h1>
 <p><%=@article.description%></p>
 <p><%=@article.price%></p>
+<ul>
+    <li><%= link_to 'editar', edit_article_path(@article) %></li>
+    <li><%= link_to 'voltar', root_path %></li>
+</ul>
+    
 
 
