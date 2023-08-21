@@ -1,0 +1,26 @@
+<div class='confirme'>
+  <div class='confirme-button'>
+    <%= link_to "Confirmar", producaos_path %> 
+    <%= button_to "Excluir", @producao, method: :delete %>
+  </div>
+  <%= render @producao %>
+</div>
+<!--
+<p style="color: green"><%= notice %></p>
+-->
+<style>
+  .confirme{
+    margin-left: 40%;
+    width: 600px;
+    height: 270px;
+    background-color:#c8c8c8;
+    border-radius: 60px;
+  }
+  .confirme-p{
+    position: absolute; 
+	  left: 30%;
+  }
+  .confirme-button{
+    text-align:center;
+  }
+</style>

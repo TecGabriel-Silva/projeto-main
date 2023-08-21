@@ -1,0 +1,105 @@
+<div class = 'index'>
+<p style="color: green"><%= notice %></p>
+<div class='o-header'>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <p class="navbar-text float-right">
+  <% if user_signed_in? %>Acessando como: <strong><%= current_user.email %></strong><br>
+  <%= link_to "Editar Perfil", edit_user_registration_path %> 
+  <%= button_to "Sair", destroy_user_session_path, method: :delete  %>
+  <% else %>
+  <%= link_to "Criar conta", new_user_registration_path, class: "navbar-link"  %> |
+  <%= link_to "Entrar", new_user_session_path, class: "navbar-link"  %>
+  <% end %>
+  </p>
+  <!--
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/ideas">Ideas</a>
+    </li>
+  </ul>
+  -->
+<h1>Cadastro de Produtos</h1>
+</div>
+<div class="o-aside">
+  <h1 style='text-align:center'>Cadastro</h1>
+  <div class='cadastro'>
+    <%= render "form", producao: @producao %>
+  </div>
+</div>
+<div class="o-main">
+  <main>
+    <div id="producaos">
+      <h1 style='text-align:center'>Produtos</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><strong>Nome<strong></th>
+            <th><strong>Descrição<strong></th>
+            <th><strong>Preço<strong></th>
+            <th style='border:none'></th>
+            <th style='border:none'></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @producaos.each do |producao| %>
+          <tr>
+            <td><%= producao.name %></td>
+            <td><%= producao.description %></td>
+            <td><%= producao.price %></td>
+            <td style='border:none'><%= link_to "Editar", edit_producao_path(producao) %></td>
+            <td style='border:none'><%= button_to "Excluir", producao, method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>  
+      </table>
+    </div>
+  </main>
+</div>
+</div>
+<!--
+<%= link_to "New producao", new_producao_path %>
+
+<div id="producaos">
+  <% @producaos.each do |producao| %>
+    <%= render producao %>
+      <%= link_to "Show this producao", producao %>
+    </p>
+  <% end %>
+</div>
+
+<h1>Producaos</h1>
+<div id="producaos">
+  <h1 style='text-align:center'>Produtos</h1>
+  <table class="table">
+    <thead>
+    <tr>
+            <th><strong>Nome<strong></th>
+            <th><strong>Descrição<strong></th>
+            <th><strong>Preço<strong></th>
+            <th style='border:none'></th>
+            <th style='border:none'></th>
+          </tr>
+        </thead>
+        <tbody>
+  <% @producaos.each do |producao| %>
+     <tr>
+            <td><%= producao.name %></td>
+            <td><%= producao.description %></td>
+            <td><%= producao.price %></td>
+            <td><%= link_to "Show this producao", producao %></td>
+            <td><%= button_to "Destroy this producao", @producao, method: :delete %></td>
+          </tr>
+  <% end %>
+</div>
+
+<%= link_to "New producao", new_producao_path %>
+<!--
+<div id="producaos">
+  <% @producaos.each do |producao| %>
+    <%= render producao %>
+      <%= link_to "Show this producao", producao %>
+    </p>
+  <% end %>
+</div>
+

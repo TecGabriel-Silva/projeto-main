@@ -1,0 +1,2 @@
+class Producao < ApplicationRecord
+end

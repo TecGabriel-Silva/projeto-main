@@ -1,0 +1,20 @@
+<div class='edit'>
+  <h1 style='text-align:center'>Editar Produto</h1>
+  <%= render "form", producao: @producao %>
+  <div class='edit-button'>
+    <%= link_to "Voltar", producaos_path %>
+  </div>
+</div>  
+
+<style>
+.edit{
+  margin-left: 40%;
+  width: 600px;
+  height: 285px;
+  background-color:#c8c8c8;
+  border-radius: 60px;
+}
+.edit-button{
+  text-align:center;
+}
+</style>

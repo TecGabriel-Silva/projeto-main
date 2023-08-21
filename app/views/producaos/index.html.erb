@@ -1,0 +1,50 @@
+<div class="p-3 border bg-light">
+<div class="container text-center">
+<p style="color: green"><%= notice %></p>
+  <span class="alert"><%= alert %></span>
+  <span class="navbar-text float-right"></span>
+  <% if user_signed_in? %>Acessando como: <strong><%= current_user.email %></strong><br>
+  <%= link_to "Editar Perfil", edit_user_registration_path %> 
+  <%= button_to "Sair", destroy_user_session_path, method: :delete  %>
+  <% else %>
+  <%= link_to "Criar conta", new_user_registration_path, class: "navbar-link"  %>
+  <%= link_to "Entrar", new_user_session_path, class: "navbar-link"  %>
+  <% end %>
+</div>
+</div>
+<div class="row gx-3">
+  <div class="col">
+    <div class="p-3 border bg-light">
+      <div class="container text-center">
+        <h1>Cadastrar Produtos</h1><br>
+        <%= render "form", producao: @producao %>
+      </div>
+    </div>
+  </div>
+    <div class="col">
+      <div class="p-3 border bg-light">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <th>NOME</th>
+            <th>DESCRIÇÃO</th>
+            <th>PREÇO</th>
+            <th></th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <h2 style="text-align:center">Lista de Produtos</h2><br>
+              <% @producaos.each do |producao| %>
+              <td><%= producao.name %></td>
+              <td><%= producao.description %></td>
+              <td><%= producao.price %></td>
+              <td><% link_to "Editar", edit_producao_path(producao) %></td>
+              <td><% button_to "Excluir", producao, method: :delete %></td>  
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

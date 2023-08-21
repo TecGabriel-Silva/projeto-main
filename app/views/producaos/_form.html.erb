@@ -1,0 +1,19 @@
+<%= form_with(model: producao) do |form| %>
+  <div>
+    <%= form.label :Nome%><br>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :Descrição%><br>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label :Preço%><br>
+    <%= form.number_field :price %>
+  </div>
+    <br>
+  <div>
+    <button class="btn btn-primary">Novo Produto<% form.submit%></button>
+  </div>
+
+<% end %>
